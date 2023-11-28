@@ -16,14 +16,6 @@ function App() {
    
   );
 }
-useEffect(()=>{
-  return(
-    console.log("COMPONENTS MOUNT")
-  ) 
-  return()=>{ 
-    console.log("COMPONENTS UNMOUNTED")
-  }
-},[] )
 
 export default App;
 // mounting, updating and unmounting stages
