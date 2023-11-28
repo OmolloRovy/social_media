@@ -1,45 +1,30 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Text } from "./Text";
 import './App.css';
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
-  const [newTask, setNewTask] = useState("");
-
-  const handleChange = (event) => {
-    setNewTask(event.target.value);
-  }
-
-  const addTask = () => {
-    const task = {
-      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
-      taskName: newTask,
-    };
-    setTodoList([...todoList, task]);
-  }
-
-  const deleteTask = (task) => {
-    const newTodoList = todoList.filter((t) => t !== task);
-    setTodoList(newTodoList);
-  }
-
+ const [showText,setShowText]= useState("")
   return (
-    <div className="App">
-      <div className='addTask'>
-        <input onChange={handleChange} />
-        <button onClick={addTask}>Add Task</button>
+    <div classNam e="App">
+      <button
+      onClick={()=>{
+        setShowText(!showText)
+      }}
+      >Show Text</button>
+      {showText && <Text />}  
       </div>
-      <div className='list'>
-        {todoList.map((task) => {
-          return (
-            <div key={task.id}>
-              <h1>{task.taskName}</h1>
-              <button onClick={() => deleteTask(task)}>X</button>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+   
   );
 }
+useEffect(()=>{
+  return(
+    console.log("COMPONENTS MOUNT")
+  ) 
+  return()=>{ 
+    console.log("COMPONENTS UNMOUNTED")
+  }
+},[] )
 
 export default App;
+// mounting, updating and unmounting stages
+// componemts life cycle and use effects hook
