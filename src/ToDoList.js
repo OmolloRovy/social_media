@@ -2,12 +2,13 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
-  const [newTask, setNewTask] = useState("");
+const[todoList, setTodoList]=useState([]);
+const [newTask, setNewTask]=useState("");
 
-  const handleChange = (event) => {
-    setNewTask(event.target.value);
-  }
+
+const handleChange=(event)=>{
+setNewTask(event.target.event)
+}
 
   const addTask = () => {
     const task = {

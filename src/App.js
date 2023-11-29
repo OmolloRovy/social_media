@@ -1,22 +1,19 @@
-import { useState } from 'react';
-import { Text } from "./Text";
-import './App.css';
 
+import './App.css';
+fetch("https://catfact.ninja/fact")
+.then((res)=>res.json())
+.then((data)=>{
+console.log(data);
+});
 function App() {
- const [showText,setShowText]= useState("")
+ 
   return (
-    <div classNam e="App">
-      <button
-      onClick={()=>{
-        setShowText(!showText)
-      }}
-      >Show Text</button>
-      {showText && <Text />}  
+    <div className="App">
+      <button>Generate Cat Fact</button>
+     <p></p>
       </div>
    
   );
 }
 
 export default App;
-// mounting, updating and unmounting stages
-// componemts life cycle and use effects hook
