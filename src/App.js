@@ -32,3 +32,4 @@ const [username, setUsername]= useState("Vanistelroy.ma")
 }
 
 export default App;
+//home and profile are next to each other hence siblings
